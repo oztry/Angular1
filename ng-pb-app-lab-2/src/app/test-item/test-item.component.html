@@ -1,0 +1,29 @@
+<h1>
+  {{ title }}
+</h1>
+<p>
+  {{ title?.length }}
+</p>
+<p>
+  {{ getReversed(title) }}
+</p>
+<br />
+
+<button (click)="triggerClick($event)">Zmien</button>
+
+<div
+  *ngIf="counter > 10; else notLimit" 
+  [class.red]="counter > 10"
+  [class.green]="counter <= 10">
+  Przekroczyles limit
+</div>
+
+<ng-template #notLimit>
+  Nie przekroczyles limitu
+</ng-template>
+
+<ul>
+  <li *ngFor="let event of events">
+    {{ event.clientX }}, {{ event.clientY }}
+  </li>
+</ul>
